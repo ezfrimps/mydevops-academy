@@ -1,0 +1,4 @@
+haproxy_frontend_ip: '*'
+haproxy_backends:
+  - backend_name: 'backend_server_1'
+    backend_id: '10.100.2.10'

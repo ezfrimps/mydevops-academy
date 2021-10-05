@@ -1,7 +1,7 @@
 ---
 roles:
   - name: geerlingguy.firewall
-  - name: incubateurpe.haproxy
+  - name: geerlingguy.haproxy
   - name: geerlingguy.apache
   - name: geerlingguy.php
   - name: geerlingguy.php-mysql
