@@ -2,15 +2,8 @@
 - hosts: all
   become: true
 
-  vars:
-    haproxy_frontend_bind_address: '*'
-    haproxy_backend_mode: 'http'
-    haproxy_backend_balance_method: 'roundrobin'
-    haproxy_backend_servers:
-      - name: app1
-        address: 10.100.2.10:80
-      - name: app2
-        address: 10.100.2.11:80
+  vars_files:
+    - vars.yml
 
   pre_tasks:
     - name: Run the equivalent of "apt-get update" as a separate step
@@ -19,6 +12,7 @@
 
   roles:
     - role: geerlingguy.haproxy
+    - role: geerlingguy.firewall
 
   tasks:
     - debug: var=hostvars[inventory_hostname]['ansible_eth1']['ipv4']['address']
