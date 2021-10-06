@@ -1,0 +1,20 @@
+---
+mysql_root_password: "password"
+
+mysql_databases:
+  - name: devops_db
+    encoding: utf8
+    collation: utf8_general_ci
+
+mysql_users:
+  - name: devops_user
+    password: "password"
+    host: "%"
+    priv: "devops_db.*:ALL"
+
+firewall_allowed_tcp_ports:
+  - "22"
+  - "3306"
+
+firewall_state: started
+firewall_enabled_at_boot: true
