@@ -3,6 +3,7 @@ firewall_allowed_tcp_ports:
   - "22"
 firewall_state: started
 firewall_enabled_at_boot: true
+haproxy_version: 1.5
 haproxy_frontend_bind_address: '*'
 haproxy_backend_mode: 'http'
 haproxy_backend_balance_method: 'roundrobin'
